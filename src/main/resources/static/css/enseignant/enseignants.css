@@ -1,0 +1,88 @@
+body{
+	margin:0;
+	background-image: url("/images/bandeauEnseignant.jpg");
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+
+}
+
+header{
+	width: 250px;
+	height: auto;
+	position : fixed;
+	margin-left: 3%;
+	margin-top: 3%;
+}
+
+.container{
+	margin-top:30%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-left: 15%;
+	margin-right: 10%;
+}
+
+.dimensionCoordonnees{
+	width: 200px;
+	text-align: center;
+}
+.coordonnees{
+	width: 200px;
+	text-align: center;
+	border-right: 1px solid white;
+}
+
+/*
+.container{
+	width: 80%;
+	height: auto;
+	position: absolute;
+	margin-left: 20%;
+	border-left: 3px solid #cebbbfs;
+	background-color: white;
+}*/
+
+.blockEnseignant{
+	display: inline-block;
+	flex-wrap: wrap;
+	width: 200px;
+	height: auto;
+	margin-left: 35px;
+
+}
+#nomPrenom{
+	text-decoration: underline;
+	margin-left: 10%;
+}
+
+#blockquote {
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-family: "Avenir Next";
+    border-left: 1px solid grey;
+    padding-left: 8px;
+    text-align: justify;
+}
+
+img{
+	width: 200px;
+	padding-left: 10px;
+	opacity: 0.3;
+}
+img:hover {
+    opacity: 1;
+}
+
+footer{
+	font-family: "Avenir Next";
+	display: flex;
+	justify-content: center;
+	background-color: black;
+	color: white;
+	padding: 1rem;
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Les Matières</title>
+<link rel="stylesheet" th:href="@{/css/matiere/matieres.css}" />
+</head>
+<body>
+	<header>
+		<h1>Les Matières</h1>
+		<nav>
+			<div>
+				<a th:href="@{ajouter-matiere-formulaire}">Ajouter</a>
+			</div>
+		</nav>
+	</header>
+	<section>
+		<article>
+			<table class="container">
+				<tr th:each="matieres : ${listeMatieres}" class="blockMatiere">
+					<td th:text="${matieres.id}"></td>
+					<td th:text="${matieres.numero_matiere}"></td>
+					<td th:text="${matieres.nom}"></td>
+					<td th:text="${matieres.coef}"></td>
+					<td th:text="${matieres.enseignant.nom}"></td>
+					<td th:text="${matieres.enseignant.prenom}"></td>
+					<td><a th:href="@{infos-matiere(id=${matieres.id})}">Voir</a></td>
+				</tr>
+			</table>
+		</article>
+	</section>
+</body>
+</html>

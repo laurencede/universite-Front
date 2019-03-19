@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Notes</title>
+<link rel="stylesheet" th:href="@{/css/note/notes.css}" />
+</head>
+<body>
+	<h1>
+		<a th:href="@{note-formulaire-ajout}">Ajout</a>
+	</h1>
+	<div>
+		<table>
+			<tr th:each="note : ${notes}">
+				<td th:text="${note.etudiant.prenom + ' ' + note.etudiant.nom}"></td>
+				<td th:text="${note.matiere.nom}"></td>
+				<td th:text="${note.note}"></td>
+				<td th:text="${note.matiere.coef}"></td>
+				<td><a th:href="@{modifier-note(idMatiere=${note.matiere.id}, idEtudiant=${note.etudiant.id})}">Modifier</a></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

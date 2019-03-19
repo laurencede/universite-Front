@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Enseignants</title>
+<link rel="stylesheet" th:href="@{/css/enseignant/enseignants.css}" />
+</head>
+<body>
+	<header>
+		<h1>Les Enseignants</h1>
+		<nav>
+			<div>
+				<a th:href="@{ajouter-enseignant-formulaire}">Ajouter</a>
+			</div>
+		</nav>
+	</header>
+	<section>
+		<article>
+			<div class="container">
+				<div th:each="enseignants : ${listeEnseignants}"
+					class="blockEnseignant">
+					<p>
+						<a th:href="@{enseignant-infos(id=${enseignants.id})}"><img
+							th:src="${enseignants.photo}" alt="photo" /></a>
+					</p>
+					<p th:text="${enseignants.nom + ' ' + enseignants.prenom}" id="nomPrenom"></p>
+					<div id="blockquote">
+						<p th:text="${enseignants.grade}"></p>
+						<p th:text="${#dates.format(enseignants.date_embauche, 'dd/MM/yyyy')}"></p>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+	<footer>
+	<div class="coordonnees">
+		<p>Coordonnées</p>
+	</div>
+	<div class="dimensionCoordonnees">
+		<p>Adresse</p>
+	</div>
+	<div class="dimensionCoordonnees">
+		<p>Email</p>
+	</div>
+	<div class="dimensionCoordonnees">
+		<p>Téléphone</p>
+	</div>
+</footer>
+</body>
+</html>

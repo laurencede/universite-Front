@@ -1,0 +1,17 @@
+.container{
+	width: 50%;
+	height: auto;
+	position: absolute;
+	margin-left: 20%;
+	border-left: 3px solid #cebbbfs;
+	background-color: white;
+}
+.blockMatiere{
+	width: 200px;
+	height: auto;
+	margin-left: 35px;
+	border-bottom: 2px solid #5cabaf;
+}
+table{
+	border-collapse:1px solid black; 
+}

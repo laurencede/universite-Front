@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Infos Matière</title>
+<link rel="stylesheet" th:href="@{/css/matiere/infos-matiere.css}" />
+</head>
+<body>
+	<section>
+		<article>
+		<div>
+		<h1 th:text="${infosMatiere.nom}"></h1>
+		</div>
+			<table class="container">
+			<tr>
+				<th>N°</th>
+				<th>Coefficient</th>
+				<th>Enseignant(nom/prénom)</th>
+			</tr>
+
+				<tr>
+					<td th:text="${infosMatiere.numero_matiere}"></td>
+					<td th:text="${infosMatiere.coef}"></td>
+					<td th:text="${infosMatiere.enseignant.nom + ' ' + infosMatiere.enseignant.prenom}"></td>
+					
+				</tr>
+			</table>
+		</article>
+		<article>
+			<div>
+				<a th:href="@{supprimer-matiere-formulaire(id=${infosMatiere.id})}">Supprimer</a>
+			</div>
+			<div>
+				<a th:href="@{modifier-matiere-formulaire(id=${infosMatiere.id})}">Modifier</a>
+			</div>
+		</article>
+	</section>
+
+</body>
+</html>

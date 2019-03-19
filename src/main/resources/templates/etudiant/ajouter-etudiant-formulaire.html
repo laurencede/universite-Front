@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Ajout Etudiant</title>
+<link rel="stylesheet" th:href="@{/css/etudiant/ajouter-etudiant-formulaire.css}" />
+</head>
+<body>
+	<header>
+		<p class="titreCategorie">Remplissez</p>
+		<p class="titreCategorie">la fiche de l'enseignant</p>
+	</header>
+	
+	<section>
+		<article>
+			<form id="formulaire" th:action="@{valider-etudiant}" method="post" th:object="${newEtudiant}">
+	
+				<label>Civilité</label>
+				<input type="radio" id="mr" name="sexe" value="M" th:field="*{sexe}"/>Masculin
+				<input type="radio" id="mme" name="sexe" value="F" th:field="*{sexe}"/>Féminin
+				<br/>
+		
+				<input type="hidden" id="id" name="id" th:field="*{id}" class="mepInput"/>
+				<br/>
+				<label for="nom" class="mepLabel">Nom</label>
+				<input type="text" id="nom" name="nom" th:field="*{nom}" class="mepInput"/>
+				<br/>
+				<label for="prenom" class="mepLabel">Prénom</label>
+				<input type="text" id="prenom" name="prenom" th:field="*{prenom}" class="mepInput"/>
+				<br/>
+				<label for="numero_etudiant" class="mepLabel">Numéro de l'étudiant</label>
+				<input type="number" id="numero_etudiant" name="numero_etudiant" th:field="*{numero_etudiant}" class="mepInput"/>
+				<br/>
+				<label for="date_naissance" class="mepLabel">Date de Naissance</label>
+				<input type="date" id="date_naissance" name="date_naissance" th:field="*{date_naissance}" class="mepInput"/>
+				<br/>
+				<label for="photo" class="mepLabel">Photo</label>
+				<input type="text" id="photo" name="photo" th:field="*{photo}" class="mepInput"/>
+				<br/>
+				<input type="button" value="Envoyer" class="mepInput" onclick="validerLeFormulaire();"/>
+				<input type="reset" value="Annuler" class="mepInput"/>
+			</form>
+		</article>
+	</section>
+		
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/etudiant/etudiant-validation.js}"></script>
+
+
+</body>
+</html>
